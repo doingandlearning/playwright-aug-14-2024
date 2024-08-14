@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test("test", async ({ page }) => {
+test("check if Kevin is still a director", async ({ page }) => {
   // Go to the home page
   await page.goto(
     "https://www.gov.uk/government/organisations/companies-house"
