@@ -86,14 +86,9 @@ The aim of the workshop is to enable testers with extensive Selenium and Java ex
    - Interpreting and using test report data
    - Integrating test reports with other tools
 
-3. **CI/CD Integration**
-
-   - Overview of CI/CD concepts
-
-4. **Bits and Bobs**
+3. **Bits and Bobs**
    - Page Object Model
    - File uploads
-   - Uno Reverso :)
 
 ### Wrap-Up and Q&A
 
