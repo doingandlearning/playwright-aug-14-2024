@@ -1,10 +1,23 @@
 import { test, expect } from "@playwright/test";
 
-test("check if Kevin is still a director", async ({ page }) => {
-  // Go to the home page
+// DRY
+// Don't Repeat Yourself
+
+// Setup
+test.beforeEach(async ({ page }) => {
   await page.goto(
     "https://www.gov.uk/government/organisations/companies-house"
   );
+  // If you can see the cookies, get rid of it!
+});
+
+// Tidy up
+test.afterEach(() => {
+  console.log("I just ran a test, I'm pretty tired!");
+});
+
+test("check if Kevin is still a director", async ({ page }) => {
+  // Go to the home page
 
   // Click on Find company info link
   await page.getByRole("link", { name: "Find company information" }).click();
@@ -33,3 +46,13 @@ test("check if Kevin is still a director", async ({ page }) => {
     page.getByRole("link", { name: "CUNNINGHAM, Kevin Peter" })
   ).toBeVisible();
 });
+
+test("website title is correct", async ({ page }) => {
+  // find the title
+  const title = await page.title();
+
+  // confirm that the title is right
+  expect(title).toBe("Companies House - GOV.UK");
+});
+
+// Be Clever < --- > Be Clear
