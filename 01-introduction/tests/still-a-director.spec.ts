@@ -12,9 +12,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 // Tidy up
-test.afterEach(() => {
-  console.log("I just ran a test, I'm pretty tired!");
-});
+test.afterEach(() => {});
 
 test("check if Kevin is still a director", async ({ page }) => {
   // Go to the home page

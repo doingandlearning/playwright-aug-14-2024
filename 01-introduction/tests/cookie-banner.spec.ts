@@ -7,19 +7,19 @@ test("Check cookie banner goes and stays gone", async ({ page }) => {
   );
 
   // Check is the cookie banner visible - it should be!!
-  const cookieBanner = await page.getByLabel("Cookies on GOV.UK");
-  expect(cookieBanner).toBeVisible();
+  const cookieBanner = page.getByLabel("Cookies on GOV.UK");
+  await expect(cookieBanner).toBeVisible();
 
   // Click on the buttons
   await page.getByRole("button", { name: "Accept additional cookies" }).click();
   await page.getByRole("button", { name: "Hide this message" }).click();
 
   // Cookie banner should be gone!
-  expect(cookieBanner).not.toBeVisible();
+  await expect(cookieBanner).not.toBeVisible();
 
   // Refresh the page.
   await page.reload();
 
   // Cookie banner should still be gone!
-  expect(cookieBanner).not.toBeVisible();
+  await expect(cookieBanner).not.toBeVisible();
 });

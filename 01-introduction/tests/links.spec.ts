@@ -7,7 +7,8 @@ test.beforeEach(async ({ page }) => {
 
 for (let title of buttonTitles) {
   test(`test the ${title} button exists`, async ({ page }) => {
-    const element = await page.getByRole("button", { name: title });
-    expect(element).toBeAttached();
+    const element = page.getByRole("button", { name: title });
+    await expect(element).toBeVisible();
+    await page.pause(); // combined with --headed
   });
 }

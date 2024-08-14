@@ -74,7 +74,7 @@ The aim of the workshop is to enable testers with extensive Selenium and Java ex
 1. **Running and Debugging Tests**
 
    - Running tests in different browsers
-   - Running tests in headless mode
+   - Running tests in headed mode
    - Debugging Playwright tests using VSCode (--ui or --debug)
    - Troubleshooting common issues
    - What about those flaky tests! (retry mechanism, increase timeout, waitForSelector)
